@@ -51,20 +51,16 @@ public class SherlockAndSquares {
 
     private static int getCount(long first, long last) {
         int count = 0;
-        for (long i = first; i <= last; i++) {
-            if (isPerfectSquare(i)) {
-                count++;
-            }
-        }
+        count = (int)(Math.floor(Math.sqrt(last)) - Math.ceil(Math.sqrt(first)) + 1);
         return count;
     }
 
-    private static boolean isPerfectSquare(long n) {
-        boolean isPerfSqr = false;
-        long sqrt = (long) Math.sqrt(n);
-        if (sqrt * sqrt == n) {
-            isPerfSqr = true;
-        }
-        return isPerfSqr;
-    }
+//    private static boolean isPerfectSquare(long n) {
+//        boolean isPerfSqr = false;
+//        long sqrt = (long) Math.sqrt(n);
+//        if (sqrt * sqrt == n) {
+//            isPerfSqr = true;
+//        }
+//        return isPerfSqr;
+//    }
 }
