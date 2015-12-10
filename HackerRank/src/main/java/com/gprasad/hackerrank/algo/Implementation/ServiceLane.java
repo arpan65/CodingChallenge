@@ -99,6 +99,19 @@ public class ServiceLane {
         for(int a0 = 0; a0 < t; a0++){
             int i = in.nextInt();
             int j = in.nextInt();
+            System.out.println(findMin(width, i, j));
         }
+    }
+    private static int findMin(int[] width, int i, int j)
+    {
+        int min = 3;
+        for(int start =i;start<=j;start++)
+        {
+            if(min>width[start])
+            {
+                min = width[start];
+            }
+        }
+        return min;
     }
 }
