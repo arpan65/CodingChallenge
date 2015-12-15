@@ -59,25 +59,14 @@ public class CaesarCipher {
         int k = in.nextInt();
         System.out.println(rotateChar(n, s, k));
     }
-
     private static String rotateChar(int length, String givenStr, int shift) {
         String rotateStr = "";
         for (int i = 0; i < length; i++) {
             char c = givenStr.charAt(i);
-            char shiftC = (char) (c + shift);
-            shift = shift%26;
             if (c >= 'A' && c <= 'Z') {
-                if (shiftC > 'Z') {
-                    rotateStr += (char) (c - (26 - shift));
-                } else {
-                    rotateStr += (char) (c + shift);
-                }
+               rotateStr+= (char)('A'+(((c-'A')+shift)%26));
             } else if (c >= 'a' && c <= 'z') {
-                if (shiftC > 'z') {
-                    rotateStr += (char) (c - (26 - shift));
-                } else {
-                    rotateStr += (char) (c + shift);
-                }
+                rotateStr+= (char)('a'+(((c-'a')+shift)%26));
             } else {
                 rotateStr += c;
             }
