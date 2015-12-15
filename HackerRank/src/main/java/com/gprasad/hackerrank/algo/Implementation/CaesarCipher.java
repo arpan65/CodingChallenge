@@ -70,7 +70,6 @@ public class CaesarCipher {
             } else {
                 rotateStr += c;
             }
-
         }
         return rotateStr;
     }
