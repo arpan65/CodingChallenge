@@ -65,6 +65,7 @@ public class CaesarCipher {
         for (int i = 0; i < length; i++) {
             char c = givenStr.charAt(i);
             char shiftC = (char) (c + shift);
+            shift = shift%26;
             if (c >= 'A' && c <= 'Z') {
                 if (shiftC > 'Z') {
                     rotateStr += (char) (c - (26 - shift));
