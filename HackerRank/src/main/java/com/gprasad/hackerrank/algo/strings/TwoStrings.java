@@ -57,7 +57,7 @@ public class TwoStrings {
 
     private static boolean ifCommonSubStringAvailable(String s1, String s2) {
         boolean isAvailable = false;
-        for(int i=97;i<(97+25);i++)
+        for(int i=97;i<(97+26);i++)
         {
             if(s1.indexOf(i)!=-1&& s2.indexOf(i)!=-1)
             {
