@@ -44,8 +44,8 @@ public class JavaAnagrams {
     }
 
     private static boolean isAnagram(String A, String B) {
-        char[] aArr = A.toCharArray();
-        char[] bArr = B.toCharArray();
+        char[] aArr = A.toLowerCase().toCharArray();
+        char[] bArr = B.toLowerCase().toCharArray();
         Arrays.sort(aArr);
         Arrays.sort(bArr);
         return Arrays.equals(aArr, bArr);
