@@ -50,7 +50,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author gq6pras
+ * @author GAURAV PRASAD
  */
 public class SparseArrays {
     public static void main(String[] args) {
