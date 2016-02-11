@@ -13,6 +13,14 @@ public class Node {
     private Integer data;
     private Node next;
 
+    public Node(Integer data) {
+        this.data = data;
+    }
+
+    public Node() {
+    }
+    
+
     public Integer getData() {
         return data;
     }
