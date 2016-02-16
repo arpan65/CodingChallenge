@@ -1,5 +1,5 @@
 /*
-Angry Professor(java Solution)
+Angry Professor(HackerRank java Solution)
 
 Problem Statement
 
@@ -52,8 +52,6 @@ For the second test case, K=2. The professor wants at least 2 students in attend
  */
 package com.gprasad.hackerrank.algo.Implementation;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -63,32 +61,19 @@ import java.util.Scanner;
 public class AngryProfessor {
 
     public static void main(String[] args) {
-        class Data {
-            int totalStudent;
-            int minRequired;
-            boolean isCancel = false;
-        }
-        List<Data> dataList = new ArrayList<>();
-        Scanner input = new Scanner(System.in);
-        int noUseCase = input.nextInt();
-        for (int i = 0; i < noUseCase; i++) {
-            Data data = new Data();
-            data.totalStudent = input.nextInt();
-            data.minRequired = input.nextInt();
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for (int a0 = 0; a0 < t; a0++) {
+            int n = in.nextInt();
+            int k = in.nextInt();
             int dummy = 0;
-            for (int j = 0; j < data.totalStudent; j++) {
-                if (input.nextInt() <=0) {
+            for (int a_i = 0; a_i < n; a_i++) {
+                int a = in.nextInt();
+                if (a <= 0) {
                     dummy++;
                 }
             }
-            if (dummy < data.minRequired) {
-                data.isCancel = true;
-            }
-            dataList.add(data);
-        }
-        for (Data data : dataList) {
-            System.out.println(data.isCancel ? "YES" : "NO");
+            System.out.println(dummy >= k ? "NO" : "YES");
         }
     }
-
 }
