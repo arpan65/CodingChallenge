@@ -70,16 +70,16 @@ import java.util.Scanner;
  */
 public class QuickSort2Sorting {
 
-    static void quickSort(int[] ar, int start, int end) {
+    private static void quickSort(int[] ar, int start, int end) {
         if (start < end) {
             int pivotIndex = getPartition(ar, start, end);
             quickSort(ar, start, pivotIndex - 1);
             quickSort(ar, pivotIndex + 1, end);
-            printBetweenArr(ar,start,end);
+            printBetweenArr(ar, start, end);
         }
     }
 
-    public static void printArray(int[] ar) {
+    private static void printArray(int[] ar) {
         for (int n : ar) {
             System.out.print(n + " ");
         }
@@ -93,23 +93,24 @@ public class QuickSort2Sorting {
         for (int i = 0; i < n; i++) {
             ar[i] = in.nextInt();
         }
-        quickSort(ar, 0, n - 1);
+      //  quickSort(ar, 0, n - 1);
+        mergeSort(ar, 0, n-1);
     }
 
     private static int getPartition(int[] ar, int start, int end) {
         int pivotIndex = start;
         int pivotElement = ar[end];
-        for(int i=start;i<end;i++) {
+        for (int i = start; i < end; i++) {
             if (ar[i] <= pivotElement) {
                 int temp = ar[i];
                 ar[i] = ar[pivotIndex];
                 ar[pivotIndex] = temp;
                 pivotIndex++;
             }
-            
+
         }
-            ar[end] = ar[pivotIndex];
-            ar[pivotIndex] = pivotElement;
+        ar[end] = ar[pivotIndex];
+        ar[pivotIndex] = pivotElement;
         return pivotIndex;
     }
 
@@ -118,5 +119,50 @@ public class QuickSort2Sorting {
             System.out.print(arr[i] + " ");
         }
         System.out.println("");
+    }
+
+    private static void mergeSort(int[] arr, int lo, int hi) {
+        if (lo < hi) {
+            int mid = (lo + hi) / 2;
+            mergeSort(arr, lo, mid);
+            mergeSort(arr, mid + 1, hi);
+            merge(arr, lo, mid, hi);
+        }
+    }
+
+    private static void merge(int[] arr, int lo, int mid, int hi) {
+        int[] temArr = new int[hi - lo + 1];
+        int i = lo;
+        int j = mid+1;
+        int k = 0;
+        while (i <= mid || j <= hi) {
+            if (i > mid) {
+                temArr[k] = arr[j];
+                k++;
+                j++;
+            }
+            else if(j>hi)
+            {
+                temArr[k]=arr[i];
+                k++;
+                i++;
+            }
+            else if(arr[i]<=arr[j])
+            {
+                temArr[k]=arr[i];
+                k++;
+                i++;
+            }
+            else{
+                temArr[k]=arr[j];
+                k++;
+                j++;
+            }
+        }
+        for(int l=0;i<temArr.length;i++)
+        {
+            arr[lo+l]=temArr[l];
+        }
+        printArray(temArr);
     }
 }
