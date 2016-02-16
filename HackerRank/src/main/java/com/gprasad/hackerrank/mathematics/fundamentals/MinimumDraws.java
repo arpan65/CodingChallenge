@@ -32,10 +32,19 @@ Case 2 : 2 pair of socks are present in the drawer. The first and the second dra
  */
 package com.gprasad.hackerrank.mathematics.fundamentals;
 
+import java.util.Scanner;
+
 /**
  *
- * @author gq6pras
+ * @author Gaurav Prasad
  */
 public class MinimumDraws {
-
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+         int T = input.nextInt();
+         for(int i=0;i<T;i++)
+         {
+             System.out.println(input.nextInt()+1);
+         }
+    }
 }
