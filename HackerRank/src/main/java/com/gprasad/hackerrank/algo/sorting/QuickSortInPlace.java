@@ -58,10 +58,55 @@ Explanation
  */
 package com.gprasad.hackerrank.algo.sorting;
 
+import java.util.Scanner;
+
 /**
  *
- * @author gq6pras
+ * @author Gaurav Pasad
  */
 public class QuickSortInPlace {
-    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] ar = new int[n];
+        for (int i = 0; i < n; i++) {
+            ar[i] = in.nextInt();
+        }
+        quickSort(ar, 0, n - 1);
+    }
+
+    private static void quickSort(int[] arr, int start, int end) {
+        if(start<end)
+        {
+            int pIndex = getPivotIndex(arr, start, end);
+            quickSort(arr, start, pIndex-1);
+            quickSort(arr, pIndex+1, end);
+        }
+    }
+
+    private static int getPivotIndex(int[] arr, int start, int end) {
+        int pIndex = start;
+        int pElem = arr[end];
+        while(start<end)
+        {
+            if(arr[start]<=pElem)
+            {
+                int temp = arr[start];
+                arr[start]=arr[pIndex];
+                arr[pIndex]=temp;
+                pIndex++;
+            }
+            start++;
+        }
+        arr[end]=arr[pIndex];
+        arr[pIndex]=pElem;
+        printArray(arr);
+        return pIndex;
+    }
+    private static void printArray(int[] ar) {
+        for (int n : ar) {
+            System.out.print(n + " ");
+        }
+        System.out.println("");
+    }
 }
