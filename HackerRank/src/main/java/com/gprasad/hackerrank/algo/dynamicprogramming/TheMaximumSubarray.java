@@ -51,10 +51,45 @@ For the max sum of a not-necessarily-contiguous group of elements, simply add al
  */
 package com.gprasad.hackerrank.algo.dynamicprogramming;
 
+import java.util.Scanner;
+
 /**
  *
- * @author gq6pras
+ * @author Gaurav Prasad
  */
 public class TheMaximumSubarray {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int testCase = input.nextInt();
+        for (int T = 0; T < testCase; T++) {
+            int arrSize = input.nextInt();
+            int[] arr = new int[arrSize];
+            for(int i=0;i<arrSize;i++ )
+            {
+                
+            }
+            //System.out.println(maxSubArrSumContiguous(arr));
+            //System.out.println(maxSubArrSumNonContiguous(arr));
+            System.out.println(maxSubArrSumContiguousBF(arr));
+           // System.out.println(maxSubArrSumNonContiguousBF(arr));
+        }
+    }
+
+    private static int maxSubArrSumContiguous(int[] arr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static int maxSubArrSumNonContiguous(int[] arr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static int maxSubArrSumContiguousBF(int[] arr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static int maxSubArrSumNonContiguousBF(int[] arr) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
