@@ -62,18 +62,18 @@ public class StockMaximize {
         for(int t=0;t<testCase;t++)
         {
            int days = input.nextInt();
-           List<Integer> pricePerday = new ArrayList<>();
+           List<Long> pricePerday = new ArrayList<>();
            for(int i=0;i<days;i++)
            {
-               pricePerday.add(input.nextInt());
+               pricePerday.add(input.nextLong());
            }
             System.out.println(getTheProfit(pricePerday,days));
         }
     }
 
-    private static long getTheProfit(List<Integer> pricePerday,int days) {
+    private static long getTheProfit(List<Long> pricePerday,int days) {
         long profit = 0;
-        int currMax = Integer.MIN_VALUE;
+        long currMax = Integer.MIN_VALUE;
         for(int i=days-1;i>=0;i--)
         {
             if(currMax<pricePerday.get(i))
