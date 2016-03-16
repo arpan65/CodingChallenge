@@ -1,5 +1,6 @@
 /*
- 
+
+Cut the sticks (HackerRank Java solution) 
 
 Problem Statement
 
@@ -78,6 +79,9 @@ _ _ _ _ _ _ _ _       DONE            DONE
  */
 package com.gprasad.hackerrank.algo.Implementation;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -85,12 +89,32 @@ import java.util.Scanner;
  * @author gq6pras
  */
 public class CutTheSticks {
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        int arr[] = new int[n];
-        for(int arr_i=0; arr_i < n; arr_i++){
-            arr[arr_i] = in.nextInt();
+        List<Integer> sticks = new ArrayList<>();
+        for (int arr_i = 0; arr_i < n; arr_i++) {
+            sticks.add(in.nextInt());
         }
+        Collections.sort(sticks);
+
+        cutSticksCount(sticks);
+    }
+
+    public static void cutSticksCount(List<Integer> sticks) {
+
+        System.out.println(sticks.size());
+        Integer temp = sticks.get(0);
+        for (int i=0;i<sticks.size();i++) {
+            sticks.set(i, sticks.get(i)-temp);
+        }
+        while (!sticks.isEmpty() && sticks.get(0) == 0) {
+            sticks.remove(0);
+        }
+        if (!sticks.isEmpty()) {
+            cutSticksCount(sticks);
+        }
+
     }
 }
