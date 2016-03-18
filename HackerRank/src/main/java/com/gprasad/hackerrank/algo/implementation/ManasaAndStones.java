@@ -83,7 +83,7 @@ public class ManasaAndStones {
                 StringBuilder sb = new StringBuilder();
                 for(int i=0;i<numStones;i++)
                 {
-                    System.out.print(i*b+(numStones-1-i)*a+" ");
+                    sb.append(i*b+(numStones-1-i)*a+" ");
                 }
                 
                 System.out.println(sb);
