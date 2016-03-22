@@ -33,10 +33,37 @@ She buys 1st1st toy with weight 11 for 11 unit and gets 2nd2nd and 3rd3rd toy fo
  */
 package com.gprasad.hackerrank.algo.greedy;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  *
  * @author gq6pras
  */
 public class PriyankaAndToys {
-    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] weightArr = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            weightArr[i] = input.nextInt();
+        }
+        Arrays.sort(weightArr);
+        System.out.println(getTheMinimumUnit(weightArr));
+    }
+
+    private static int getTheMinimumUnit(int[] weightArr) {
+        int minimumUnit = 1;
+        int initWt = weightArr[0];
+        for(int i=1;i<weightArr.length;i++)
+        {
+            if(weightArr[i]>initWt+4)
+            {
+                minimumUnit++;
+                initWt=weightArr[i];
+            }
+        }
+        return minimumUnit;
+    }
 }
