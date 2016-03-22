@@ -85,7 +85,15 @@ public class TheMaximumSubarray {
     }
 
     private static int maxSubArrSumContiguousBF(int[] arr) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int maxSum = Integer.MIN_VALUE;
+        for(int i = 0;i<arr.length;i++)
+        {
+           for(int j=0;j<=i;j++)
+           {
+               
+           }
+        }
+        return maxSum;
     }
 
     private static int maxSubArrSumNonContiguousBF(int[] arr) {

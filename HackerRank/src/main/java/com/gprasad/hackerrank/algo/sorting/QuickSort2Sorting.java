@@ -95,6 +95,7 @@ public class QuickSort2Sorting {
         }
       //  quickSort(ar, 0, n - 1);
         mergeSort(ar, 0, n-1);
+        printArray(ar);
     }
 
     private static int getPartition(int[] ar, int start, int end) {
@@ -123,7 +124,7 @@ public class QuickSort2Sorting {
 
     private static void mergeSort(int[] arr, int lo, int hi) {
         if (lo < hi) {
-            int mid = (lo + hi) / 2;
+            int mid = lo + (hi-lo) / 2;
             mergeSort(arr, lo, mid);
             mergeSort(arr, mid + 1, hi);
             merge(arr, lo, mid, hi);
@@ -159,7 +160,7 @@ public class QuickSort2Sorting {
                 j++;
             }
         }
-        for(int l=0;i<temArr.length;i++)
+        for(int l=0;l<temArr.length;l++)
         {
             arr[lo+l]=temArr[l];
         }
