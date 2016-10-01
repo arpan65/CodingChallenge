@@ -80,9 +80,9 @@ public class SherlockAndAnagrams {
         Map<String,Integer> charArrWordMap = new HashMap<>();
         for(int i=0;i<str.length();i++)
         {
-            for(int j=i+1;j<=str.length();j++)
+            for(int j=1;j<=str.length()-i;j++)
             {
-                String subStr = str.substring(i, j);
+                String subStr = str.substring(i, j+i);
                 char[] subStrArr = subStr.toCharArray();
                 Arrays.sort(subStrArr);
                 String sortedString = new String(subStrArr);
