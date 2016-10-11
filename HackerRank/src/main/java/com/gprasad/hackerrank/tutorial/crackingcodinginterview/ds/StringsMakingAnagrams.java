@@ -48,10 +48,43 @@ We must delete characters to make both strings anagrams, so we print on a new li
  */
 package com.gprasad.hackerrank.tutorial.crackingcodinginterview.ds;
 
+import java.util.Scanner;
+
 /**
  *
  * @author gq6pras
  */
 public class StringsMakingAnagrams {
-    
+
+    public static int numberNeeded(String first, String second) {
+        int deletedCount = 0;
+        int[] aArr = new int[26];
+        int[] bArr = new int[26];
+        for (int i = 0; i < first.length(); i++) {
+            int index = first.charAt(i) - 'a';
+            aArr[index]++;
+        }
+        for (int i = 0; i < second.length(); i++) {
+            int index = second.charAt(i) - 'a';
+            bArr[index]++;
+        }
+        for (int i = 0; i < 26; i++) {
+            if(aArr[i]>bArr[i])
+            {
+                deletedCount = deletedCount+ aArr[i]-bArr[i];
+            }
+             if(aArr[i]<bArr[i])
+            {
+                deletedCount = deletedCount+ bArr[i]-aArr[i];
+            }
+        }
+        return deletedCount;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String a = in.next();
+        String b = in.next();
+        System.out.println(numberNeeded(a, b));
+    }
 }
