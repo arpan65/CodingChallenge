@@ -16,9 +16,12 @@ public class TreeHeightOfABinaryTree {
     }
 
     private static int height(Node root) {
+        int leftHeight = 0;
+        int rightHeight = 0;
         if (root != null) {
-
+            leftHeight +=height(root.left);
+            rightHeight+=height(root.right);
         }
-        return 0;
+        return leftHeight>rightHeight ? leftHeight:rightHeight;
     }
 }

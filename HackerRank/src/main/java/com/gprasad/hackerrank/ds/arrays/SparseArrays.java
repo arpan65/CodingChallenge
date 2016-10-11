@@ -74,7 +74,7 @@ public class SparseArrays {
         for(int i=0;i<Q;i++)
         {
             String qString = input.next();
-            System.out.println(strIntMap.get(qString)!=null?strIntMap.get(qString):0);
+            //System.out.println(strIntMap.get(qString)!=null?strIntMap.get(qString):0);
         }
     }
 }
