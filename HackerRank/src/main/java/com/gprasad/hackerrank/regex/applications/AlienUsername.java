@@ -50,10 +50,25 @@ We validate the following three usernames:
  */
 package com.gprasad.hackerrank.regex.applications;
 
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  *
  * @author gq6pras
  */
 public class AlienUsername {
+    public static void main(String[] args) {
+        String regex = "^(_|\\.)[\\d]+[0|\\w]*[_?]$";
+        Scanner input = new Scanner(System.in);
+        int testCase = input.nextInt();
+        while (testCase-->0) {
+            Pattern pattern= Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(input.next());
+            System.out.println(matcher.find()?"VALID":"INVALID");
+            
+        }
+    }
     
 }
