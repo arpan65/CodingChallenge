@@ -55,9 +55,7 @@ public class InsertNodeAtSpecificPositionInLinkedList {
                     node.data = data;
                     node.next = head.next;
                     head.next = node;
-                }
-                else
-                {
+                } else {
                     InsertNth(head.next, data, position);
                 }
             }
@@ -68,24 +66,55 @@ public class InsertNodeAtSpecificPositionInLinkedList {
         count = 0;
         return head;
     }
+
     public static void main(String[] args) {
-        Scanner  input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int linkListSize = input.nextInt();
         Node head = null;
-        while(linkListSize-->0)
-        {
+        while (linkListSize-- > 0) {
             head = InsertNth(head, input.nextInt(), input.nextInt());
+            //head = insertNthLoop(head, input.nextInt(), input.nextInt());
         }
         printList(head);
-        
+
     }
-    
-    static void printList(Node node)
-    {
-        if(node!=null)
-        {
+
+    static void printList(Node node) {
+        if (node != null) {
             System.out.println(node.data);
             printList(node.next);
         }
     }
+
+    static Node insertNthLoop(Node head, int data, int position) {
+        
+        if (head == null && position == 0) {
+            head = new Node();
+            head.data = data;
+        } else {
+            if (position == 0) {
+                Node node = new Node();
+                node.data = data;
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                Node tempHead = head; 
+                int currPos =0;
+                while(currPos<position-1)
+                {
+                    head = head.next;
+                    currPos++;
+                }
+                Node node = new Node();
+                node.data = data;
+                node.next = head.next;
+                head.next = node;
+                head = tempHead;
+            }
+        }
+        return head;
+    }
+
 }
