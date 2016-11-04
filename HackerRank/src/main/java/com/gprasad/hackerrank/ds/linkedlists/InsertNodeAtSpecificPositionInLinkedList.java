@@ -87,7 +87,7 @@ public class InsertNodeAtSpecificPositionInLinkedList {
     }
 
     static Node insertNthLoop(Node head, int data, int position) {
-        
+
         if (head == null && position == 0) {
             head = new Node();
             head.data = data;
@@ -97,13 +97,10 @@ public class InsertNodeAtSpecificPositionInLinkedList {
                 node.data = data;
                 node.next = head;
                 head = node;
-            }
-            else
-            {
-                Node tempHead = head; 
-                int currPos =0;
-                while(currPos<position-1)
-                {
+            } else {
+                Node tempHead = head;
+                int currPos = 0;
+                while (currPos < position - 1) {
                     head = head.next;
                     currPos++;
                 }
