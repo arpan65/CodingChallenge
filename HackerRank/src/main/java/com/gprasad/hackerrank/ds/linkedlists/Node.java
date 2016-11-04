@@ -10,8 +10,8 @@ package com.gprasad.hackerrank.ds.linkedlists;
  * @author gq6pras
  */
 public class Node {
-    private Integer data;
-    private Node next;
+    Integer data;
+    Node next;
 
     public Node(Integer data) {
         this.data = data;
