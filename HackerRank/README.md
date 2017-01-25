@@ -11,6 +11,11 @@
       Here index is the position of each character in the string. I have used substrings to to create the string in java code. There should be a similar way in all the other programming language.
      
 #### [Day 10: Binary Numbers](https://www.hackerrank.com/challenges/30-binary-numbers)
+##### [*Solution*](https://github.com/gauravprasad/CodingChallenge/blob/master/HackerRank/src/main/java/com/gprasad/hackerrank/tutorial/thirtydaysofcode/Day10BinaryNumbers.java)
+        Explanation: Take two integer variable. One storing the max and the second one storing the count of consecutive 1's. Now the input in the problem is a decimal number (number with base 10). 
+      Here we need to think first how to convert the decimal to binary. and then count 1's. But doing this in two step will increase the execution time. So we have to do it in one step. If we go back to the school days we can get the answer.
+      Execute a while loop till the number is greater then zero.
+    
 #### [Day 11: 2D Arrays](https://www.hackerrank.com/challenges/30-2d-arrays)
 #### [Day 10: Binary Numbers](https://www.hackerrank.com/challenges/30-binary-numbers) 
 #### [Day 10: Binary Numbers](https://www.hackerrank.com/challenges/30-binary-numbers)
