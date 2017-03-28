@@ -1,6 +1,6 @@
 # [Hacker Rank] (https://www.hackerrank.com/)
 
-## Tutorials
+## Tutorialsgo
 
 ### 30 Days of Code
         

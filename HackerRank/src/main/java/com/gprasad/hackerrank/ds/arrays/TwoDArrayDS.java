@@ -6,7 +6,6 @@
 package com.gprasad.hackerrank.ds.arrays;
 
 import java.util.Scanner;
-import org.omg.CORBA.INTERNAL;
 
 /**
  *
